@@ -829,6 +829,177 @@
       },
       "schedule_water_heater_2": {
         "name": "Розклад водонагрівача 2"
+      },
+      "re_kcur_int_temp": {
+        "name": "Температура зовнішнього повітря"
+      },
+      "re_kcur_sup_temp": {
+        "name": "Температура припливного повітря"
+      },
+      "re_kcur_beh_exch_temp": {
+        "name": "Температура після теплообмінника"
+      },
+      "re_kcur_ext_temp": {
+        "name": "Температура витяжного повітря"
+      },
+      "re_kcu_exh_temp": {
+        "name": "Температура викидного повітря"
+      },
+      "re_kcur_ghe_temp": {
+        "name": "Температура ґрунтового теплообмінника"
+      },
+      "re_kcur_set_point": {
+        "name": "Задана температура"
+      },
+      "re_kcur_sup_fan_speed": {
+        "name": "Припливний вентилятор"
+      },
+      "re_kcur_exh_fan_speed": {
+        "name": "Витяжний вентилятор"
+      },
+      "by_pcur_control": {
+        "name": "Відкриття байпасу"
+      },
+      "mixc_hcur_control": {
+        "name": "Керування камерою змішування"
+      },
+      "shea_tcur_control": {
+        "name": "Керування вторинним нагрівачем"
+      },
+      "coo_lcur_control": {
+        "name": "Керування охолоджувачем"
+      },
+      "rek_user1_set_point": {
+        "name": "Режим 1 – задана температура"
+      },
+      "rek_user1_sup_fan_speed": {
+        "name": "Режим 1 – припливний вентилятор"
+      },
+      "rek_user1_exh_fan_speed": {
+        "name": "Режим 1 – витяжний вентилятор"
+      },
+      "rek_user2_set_point": {
+        "name": "Режим 2 – задана температура"
+      },
+      "rek_user2_sup_fan_speed": {
+        "name": "Режим 2 – припливний вентилятор"
+      },
+      "rek_user2_exh_fan_speed": {
+        "name": "Режим 2 – витяжний вентилятор"
+      },
+      "rek_user3_set_point": {
+        "name": "Режим 3 – задана температура"
+      },
+      "rek_user3_sup_fan_speed": {
+        "name": "Режим 3 – припливний вентилятор"
+      },
+      "rek_user3_exh_fan_speed": {
+        "name": "Режим 3 – витяжний вентилятор"
+      },
+      "rek_user4_set_point": {
+        "name": "Режим 4 – задана температура"
+      },
+      "rek_user4_sup_fan_speed": {
+        "name": "Режим 4 – припливний вентилятор"
+      },
+      "rek_user4_exh_fan_speed": {
+        "name": "Режим 4 – витяжний вентилятор"
+      },
+      "rek_party_set_point": {
+        "name": "Режим вечірки – задана температура"
+      },
+      "rek_party_sup_fan_speed": {
+        "name": "Режим вечірки – припливний вентилятор"
+      },
+      "rek_party_exh_fan_speed": {
+        "name": "Режим вечірки – витяжний вентилятор"
+      },
+      "rek_party_dur": {
+        "name": "Тривалість режиму вечірки"
+      },
+      "rek_airing_exh_fan_speed": {
+        "name": "Провітрювання – витяжний вентилятор"
+      },
+      "rek_airing_dur": {
+        "name": "Тривалість провітрювання"
+      },
+      "re_koverpr_fan_speed_dif": {
+        "name": "Різниця швидкостей вентиляторів (надлишковий тиск)"
+      },
+      "gh_esum_open_temp": {
+        "name": "ҐТО – температура відкриття (літо)"
+      },
+      "gh_ewint_open_temp_": {
+        "name": "ҐТО – температура відкриття (зима)"
+      },
+      "gh_emax_open_time": {
+        "name": "ҐТО – максимальний час відкриття"
+      },
+      "gh_eregen_time": {
+        "name": "ҐТО – час регенерації"
+      },
+      "gh_eman_start": {
+        "name": "ҐТО – ручний запуск"
+      },
+      "re_kmod_state": {
+        "name": "Робочий стан рекуператора"
+      },
+      "re_kmod_sett": {
+        "name": "Налаштування режиму рекуператора"
+      },
+      "by_pmod_state": {
+        "name": "Стан байпасу"
+      },
+      "gh_emod_state": {
+        "name": "Стан ҐТО"
+      },
+      "gh_emod_sett": {
+        "name": "Налаштування ҐТО"
+      },
+      "shea_tmod_state": {
+        "name": "Стан вторинного нагрівача"
+      },
+      "phea_tmod_state": {
+        "name": "Стан попереднього нагрівача"
+      },
+      "cs_pmod_state": {
+        "name": "Стан CSP"
+      },
+      "outre_lstate": {
+        "name": "Стан релейних виходів"
+      },
+      "indi_nstate": {
+        "name": "Стан цифрових входів"
+      },
+      "re_kexch_type": {
+        "name": "Тип теплообмінника"
+      },
+      "rekws1": {
+        "name": "Робочий параметр WS1"
+      },
+      "rekws4": {
+        "name": "Робочий параметр WS4"
+      },
+      "resre_lcooler": {
+        "name": "Призначення реле охолоджувача"
+      },
+      "resre_lheater": {
+        "name": "Призначення реле нагрівача"
+      },
+      "anse_nchoosen_sen": {
+        "name": "Вибраний аналоговий датчик"
+      },
+      "ansenai_nsen_num": {
+        "name": "Вхід аналогового датчика"
+      },
+      "ad_cbin_a2": {
+        "name": "Аналоговий вхід A2 (сирий)"
+      },
+      "in_eco_xadc8": {
+        "name": "Аналоговий вхід ecoX 8 (сирий)"
+      },
+      "in_eco_xadc9": {
+        "name": "Аналоговий вхід ecoX 9 (сирий)"
       }
     }
   }

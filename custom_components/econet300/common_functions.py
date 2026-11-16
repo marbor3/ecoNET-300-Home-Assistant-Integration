@@ -53,6 +53,17 @@ def is_ecosol_controller(controller_id: str | None) -> bool:
     return bool(_ECOSOL_CONTROLLER_ID_RE.fullmatch(controller_id.strip()))
 
 
+def is_ecovent_controller(controller_id: str | None) -> bool:
+    """Return True when controllerID is an ecoVENT ventilation (recuperator) controller.
+
+    ecoVENT units report ``REK*`` / ``BYP*`` / ``GHE*`` keys in regParams and have
+    no boiler, so boiler-specific entities must not be created for them.
+    """
+    if not controller_id or not isinstance(controller_id, str):
+        return False
+    return controller_id.strip().lower().startswith("ecovent")
+
+
 def is_ecomax360i_controller(controller_id: str | None) -> bool:
     """Return True when sysParams controllerID is ecoMAX360i (schema-based regParams ``curr``)."""
     if not controller_id or not isinstance(controller_id, str):

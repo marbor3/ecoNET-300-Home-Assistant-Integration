@@ -1433,6 +1433,177 @@
       },
       "schedule_water_heater_2": {
         "name": "Warmwasserbereiter 2 Zeitplan"
+      },
+      "re_kcur_int_temp": {
+        "name": "Außenlufttemperatur"
+      },
+      "re_kcur_sup_temp": {
+        "name": "Zulufttemperatur"
+      },
+      "re_kcur_beh_exch_temp": {
+        "name": "Temperatur nach Wärmetauscher"
+      },
+      "re_kcur_ext_temp": {
+        "name": "Ablufttemperatur"
+      },
+      "re_kcu_exh_temp": {
+        "name": "Fortlufttemperatur"
+      },
+      "re_kcur_ghe_temp": {
+        "name": "Erdwärmetauscher-Temperatur"
+      },
+      "re_kcur_set_point": {
+        "name": "Solltemperatur"
+      },
+      "re_kcur_sup_fan_speed": {
+        "name": "Zuluftventilator"
+      },
+      "re_kcur_exh_fan_speed": {
+        "name": "Abluftventilator"
+      },
+      "by_pcur_control": {
+        "name": "Bypass-Öffnung"
+      },
+      "mixc_hcur_control": {
+        "name": "Mischkammer-Ansteuerung"
+      },
+      "shea_tcur_control": {
+        "name": "Nachheizregister-Ansteuerung"
+      },
+      "coo_lcur_control": {
+        "name": "Kühler-Ansteuerung"
+      },
+      "rek_user1_set_point": {
+        "name": "Modus 1 Solltemperatur"
+      },
+      "rek_user1_sup_fan_speed": {
+        "name": "Modus 1 Zuluftventilator"
+      },
+      "rek_user1_exh_fan_speed": {
+        "name": "Modus 1 Abluftventilator"
+      },
+      "rek_user2_set_point": {
+        "name": "Modus 2 Solltemperatur"
+      },
+      "rek_user2_sup_fan_speed": {
+        "name": "Modus 2 Zuluftventilator"
+      },
+      "rek_user2_exh_fan_speed": {
+        "name": "Modus 2 Abluftventilator"
+      },
+      "rek_user3_set_point": {
+        "name": "Modus 3 Solltemperatur"
+      },
+      "rek_user3_sup_fan_speed": {
+        "name": "Modus 3 Zuluftventilator"
+      },
+      "rek_user3_exh_fan_speed": {
+        "name": "Modus 3 Abluftventilator"
+      },
+      "rek_user4_set_point": {
+        "name": "Modus 4 Solltemperatur"
+      },
+      "rek_user4_sup_fan_speed": {
+        "name": "Modus 4 Zuluftventilator"
+      },
+      "rek_user4_exh_fan_speed": {
+        "name": "Modus 4 Abluftventilator"
+      },
+      "rek_party_set_point": {
+        "name": "Partymodus Solltemperatur"
+      },
+      "rek_party_sup_fan_speed": {
+        "name": "Partymodus Zuluftventilator"
+      },
+      "rek_party_exh_fan_speed": {
+        "name": "Partymodus Abluftventilator"
+      },
+      "rek_party_dur": {
+        "name": "Dauer Partymodus"
+      },
+      "rek_airing_exh_fan_speed": {
+        "name": "Stoßlüften Abluftventilator"
+      },
+      "rek_airing_dur": {
+        "name": "Dauer Stoßlüften"
+      },
+      "re_koverpr_fan_speed_dif": {
+        "name": "Ventilator-Differenz (Überdruck)"
+      },
+      "gh_esum_open_temp": {
+        "name": "EWT Öffnungstemperatur Sommer"
+      },
+      "gh_ewint_open_temp_": {
+        "name": "EWT Öffnungstemperatur Winter"
+      },
+      "gh_emax_open_time": {
+        "name": "EWT maximale Öffnungszeit"
+      },
+      "gh_eregen_time": {
+        "name": "EWT Regenerationszeit"
+      },
+      "gh_eman_start": {
+        "name": "EWT Handstart"
+      },
+      "re_kmod_state": {
+        "name": "Lüftung Betriebszustand"
+      },
+      "re_kmod_sett": {
+        "name": "Lüftung Moduseinstellungen"
+      },
+      "by_pmod_state": {
+        "name": "Bypass-Zustand"
+      },
+      "gh_emod_state": {
+        "name": "EWT-Zustand"
+      },
+      "gh_emod_sett": {
+        "name": "EWT-Einstellungen"
+      },
+      "shea_tmod_state": {
+        "name": "Nachheizregister-Zustand"
+      },
+      "phea_tmod_state": {
+        "name": "Vorheizregister-Zustand"
+      },
+      "cs_pmod_state": {
+        "name": "CSP-Zustand"
+      },
+      "outre_lstate": {
+        "name": "Zustand Relaisausgänge"
+      },
+      "indi_nstate": {
+        "name": "Zustand Digitaleingänge"
+      },
+      "re_kexch_type": {
+        "name": "Wärmetauschertyp"
+      },
+      "rekws1": {
+        "name": "Betriebsparameter WS1"
+      },
+      "rekws4": {
+        "name": "Betriebsparameter WS4"
+      },
+      "resre_lcooler": {
+        "name": "Relaiszuordnung Kühler"
+      },
+      "resre_lheater": {
+        "name": "Relaiszuordnung Heizregister"
+      },
+      "anse_nchoosen_sen": {
+        "name": "Gewählter Analogsensor"
+      },
+      "ansenai_nsen_num": {
+        "name": "Analogsensor-Eingang"
+      },
+      "ad_cbin_a2": {
+        "name": "Analogeingang A2 (roh)"
+      },
+      "in_eco_xadc8": {
+        "name": "ecoX Analogeingang 8 (roh)"
+      },
+      "in_eco_xadc9": {
+        "name": "ecoX Analogeingang 9 (roh)"
       }
     },
     "water_heater": {

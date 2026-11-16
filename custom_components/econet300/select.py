@@ -32,6 +32,7 @@ from .common_functions import (
     heater_mode_value_to_option,
     is_ecomax360i_controller,
     is_ecoster_related,
+    is_ecovent_controller,
     mixer_exists,
 )
 from .const import (
@@ -826,6 +827,12 @@ async def async_setup_entry(
         if select_key == "heaterMode" and is_ecomax360i_controller(controller_id):
             _LOGGER.info(
                 "Skipping unsupported static heaterMode control for ecoMAX360i"
+            )
+            continue
+        if select_key == "heaterMode" and is_ecovent_controller(controller_id):
+            # Heater mode is a boiler control; a recuperator has no such parameter.
+            _LOGGER.info(
+                "Skipping heaterMode control for ecoVENT ventilation controller"
             )
             continue
         _LOGGER.debug("Creating select entity: %s", select_key)

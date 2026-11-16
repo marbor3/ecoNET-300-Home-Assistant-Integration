@@ -1433,6 +1433,177 @@
       },
       "schedule_water_heater_2": {
         "name": "Water heater 2 schedule"
+      },
+      "re_kcur_int_temp": {
+        "name": "Outdoor air temperature"
+      },
+      "re_kcur_sup_temp": {
+        "name": "Supply air temperature"
+      },
+      "re_kcur_beh_exch_temp": {
+        "name": "Temperature after heat exchanger"
+      },
+      "re_kcur_ext_temp": {
+        "name": "Extract air temperature"
+      },
+      "re_kcu_exh_temp": {
+        "name": "Exhaust air temperature"
+      },
+      "re_kcur_ghe_temp": {
+        "name": "Ground heat exchanger temperature"
+      },
+      "re_kcur_set_point": {
+        "name": "Target temperature"
+      },
+      "re_kcur_sup_fan_speed": {
+        "name": "Supply fan speed"
+      },
+      "re_kcur_exh_fan_speed": {
+        "name": "Exhaust fan speed"
+      },
+      "by_pcur_control": {
+        "name": "Bypass opening"
+      },
+      "mixc_hcur_control": {
+        "name": "Mixing chamber control"
+      },
+      "shea_tcur_control": {
+        "name": "Secondary heater control"
+      },
+      "coo_lcur_control": {
+        "name": "Cooler control"
+      },
+      "rek_user1_set_point": {
+        "name": "Mode 1 target temperature"
+      },
+      "rek_user1_sup_fan_speed": {
+        "name": "Mode 1 supply fan speed"
+      },
+      "rek_user1_exh_fan_speed": {
+        "name": "Mode 1 exhaust fan speed"
+      },
+      "rek_user2_set_point": {
+        "name": "Mode 2 target temperature"
+      },
+      "rek_user2_sup_fan_speed": {
+        "name": "Mode 2 supply fan speed"
+      },
+      "rek_user2_exh_fan_speed": {
+        "name": "Mode 2 exhaust fan speed"
+      },
+      "rek_user3_set_point": {
+        "name": "Mode 3 target temperature"
+      },
+      "rek_user3_sup_fan_speed": {
+        "name": "Mode 3 supply fan speed"
+      },
+      "rek_user3_exh_fan_speed": {
+        "name": "Mode 3 exhaust fan speed"
+      },
+      "rek_user4_set_point": {
+        "name": "Mode 4 target temperature"
+      },
+      "rek_user4_sup_fan_speed": {
+        "name": "Mode 4 supply fan speed"
+      },
+      "rek_user4_exh_fan_speed": {
+        "name": "Mode 4 exhaust fan speed"
+      },
+      "rek_party_set_point": {
+        "name": "Party mode target temperature"
+      },
+      "rek_party_sup_fan_speed": {
+        "name": "Party mode supply fan speed"
+      },
+      "rek_party_exh_fan_speed": {
+        "name": "Party mode exhaust fan speed"
+      },
+      "rek_party_dur": {
+        "name": "Party mode duration"
+      },
+      "rek_airing_exh_fan_speed": {
+        "name": "Airing exhaust fan speed"
+      },
+      "rek_airing_dur": {
+        "name": "Airing duration"
+      },
+      "re_koverpr_fan_speed_dif": {
+        "name": "Fan speed difference (overpressure)"
+      },
+      "gh_esum_open_temp": {
+        "name": "GHE summer opening temperature"
+      },
+      "gh_ewint_open_temp_": {
+        "name": "GHE winter opening temperature"
+      },
+      "gh_emax_open_time": {
+        "name": "GHE maximum opening time"
+      },
+      "gh_eregen_time": {
+        "name": "GHE regeneration time"
+      },
+      "gh_eman_start": {
+        "name": "GHE manual start"
+      },
+      "re_kmod_state": {
+        "name": "Ventilation operating state"
+      },
+      "re_kmod_sett": {
+        "name": "Ventilation mode settings"
+      },
+      "by_pmod_state": {
+        "name": "Bypass state"
+      },
+      "gh_emod_state": {
+        "name": "GHE state"
+      },
+      "gh_emod_sett": {
+        "name": "GHE settings"
+      },
+      "shea_tmod_state": {
+        "name": "Secondary heater state"
+      },
+      "phea_tmod_state": {
+        "name": "Preheater state"
+      },
+      "cs_pmod_state": {
+        "name": "CSP state"
+      },
+      "outre_lstate": {
+        "name": "Relay outputs state"
+      },
+      "indi_nstate": {
+        "name": "Digital inputs state"
+      },
+      "re_kexch_type": {
+        "name": "Heat exchanger type"
+      },
+      "rekws1": {
+        "name": "Operating parameter WS1"
+      },
+      "rekws4": {
+        "name": "Operating parameter WS4"
+      },
+      "resre_lcooler": {
+        "name": "Cooler relay assignment"
+      },
+      "resre_lheater": {
+        "name": "Heater relay assignment"
+      },
+      "anse_nchoosen_sen": {
+        "name": "Selected analog sensor"
+      },
+      "ansenai_nsen_num": {
+        "name": "Analog sensor input"
+      },
+      "ad_cbin_a2": {
+        "name": "Analog input A2 (raw)"
+      },
+      "in_eco_xadc8": {
+        "name": "ecoX analog input 8 (raw)"
+      },
+      "in_eco_xadc9": {
+        "name": "ecoX analog input 9 (raw)"
       }
     },
     "water_heater": {

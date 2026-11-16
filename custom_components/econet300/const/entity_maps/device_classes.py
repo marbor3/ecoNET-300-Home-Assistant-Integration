@@ -7,6 +7,23 @@ from homeassistant.components.number import NumberDeviceClass as _NumberDeviceCl
 from homeassistant.components.sensor import SensorDeviceClass as _SensorDeviceClass
 
 ENTITY_SENSOR_DEVICE_CLASS_MAP: dict[str, _SensorDeviceClass | None] = {
+    # ecoVENT recuperator (Plum ventilation controller)
+    "REKcurIntTemp": _SensorDeviceClass.TEMPERATURE,
+    "REKcurSupTemp": _SensorDeviceClass.TEMPERATURE,
+    "REKcurBehExchTemp": _SensorDeviceClass.TEMPERATURE,
+    "REKcurExtTemp": _SensorDeviceClass.TEMPERATURE,
+    "REKcuExhTemp": _SensorDeviceClass.TEMPERATURE,
+    "REKcurGHETemp": _SensorDeviceClass.TEMPERATURE,
+    "REKcurSetPoint": _SensorDeviceClass.TEMPERATURE,
+    "REKUser1SetPoint": _SensorDeviceClass.TEMPERATURE,
+    "REKUser2SetPoint": _SensorDeviceClass.TEMPERATURE,
+    "REKUser3SetPoint": _SensorDeviceClass.TEMPERATURE,
+    "REKUser4SetPoint": _SensorDeviceClass.TEMPERATURE,
+    "REKPartySetPoint": _SensorDeviceClass.TEMPERATURE,
+    "GHEsumOpenTemp": _SensorDeviceClass.TEMPERATURE,
+    "GHEwintOpenTemp_": _SensorDeviceClass.TEMPERATURE,
+    "REKPartyDur": _SensorDeviceClass.DURATION,
+    "REKAiringDur": _SensorDeviceClass.DURATION,
     "tempFeeder": _SensorDeviceClass.TEMPERATURE,
     "tempExternalSensor": _SensorDeviceClass.TEMPERATURE,
     "tempCO": _SensorDeviceClass.TEMPERATURE,

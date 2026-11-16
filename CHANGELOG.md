@@ -3,6 +3,14 @@
 
 ## [Unreleased]
 
+### Added
+
+- **ecoVENT ventilation (heat recovery) controllers**: recuperators with a Plum **ecoVENT** controller (`controllerID` `ecoVENT`, for example Frapol units) are recognised. Their `REK*`, `BYP*` and `GHE*` values get proper names, units and device classes: outdoor, supply, extract and exhaust air temperatures, target temperature, supply and exhaust fan speed, bypass opening, and the per-mode, party and airing presets. Presets and raw status codes are diagnostics; status codes keep no long-term statistics. Names in all six languages. The values are read-only for now.
+
+### Fixed
+
+- **Boiler entities on ecoVENT recuperators**: the boiler on/off switch (`BOILER_CONTROL` writes), the heater mode select and the boiler binary sensors (pumps, feeder, fuel consumption calculator) are no longer created on ecoVENT controllers, which have no boiler. Existing ones stay behind as *Unavailable* and can be removed.
+
 ## [v1.3.8] - 2026-11-15
 
 Bug fix release for the ecoMAX360i water heater added in 1.3.7. Thanks to

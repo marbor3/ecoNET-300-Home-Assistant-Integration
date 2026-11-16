@@ -1433,6 +1433,177 @@
       },
       "schedule_water_heater_2": {
         "name": "Harmonogram podgrzewacza wody 2"
+      },
+      "re_kcur_int_temp": {
+        "name": "Temperatura czerpni"
+      },
+      "re_kcur_sup_temp": {
+        "name": "Temperatura nawiewu"
+      },
+      "re_kcur_beh_exch_temp": {
+        "name": "Temperatura za wymiennikiem"
+      },
+      "re_kcur_ext_temp": {
+        "name": "Temperatura wyciągu"
+      },
+      "re_kcu_exh_temp": {
+        "name": "Temperatura wyrzutni"
+      },
+      "re_kcur_ghe_temp": {
+        "name": "Temperatura GWC"
+      },
+      "re_kcur_set_point": {
+        "name": "Temperatura zadana"
+      },
+      "re_kcur_sup_fan_speed": {
+        "name": "Wentylator nawiewu"
+      },
+      "re_kcur_exh_fan_speed": {
+        "name": "Wentylator wywiewu"
+      },
+      "by_pcur_control": {
+        "name": "Otwarcie bypassu"
+      },
+      "mixc_hcur_control": {
+        "name": "Sterowanie komorą mieszania"
+      },
+      "shea_tcur_control": {
+        "name": "Sterowanie nagrzewnicą wtórną"
+      },
+      "coo_lcur_control": {
+        "name": "Sterowanie chłodnicą"
+      },
+      "rek_user1_set_point": {
+        "name": "Tryb 1 – temperatura zadana"
+      },
+      "rek_user1_sup_fan_speed": {
+        "name": "Tryb 1 – wentylator nawiewu"
+      },
+      "rek_user1_exh_fan_speed": {
+        "name": "Tryb 1 – wentylator wywiewu"
+      },
+      "rek_user2_set_point": {
+        "name": "Tryb 2 – temperatura zadana"
+      },
+      "rek_user2_sup_fan_speed": {
+        "name": "Tryb 2 – wentylator nawiewu"
+      },
+      "rek_user2_exh_fan_speed": {
+        "name": "Tryb 2 – wentylator wywiewu"
+      },
+      "rek_user3_set_point": {
+        "name": "Tryb 3 – temperatura zadana"
+      },
+      "rek_user3_sup_fan_speed": {
+        "name": "Tryb 3 – wentylator nawiewu"
+      },
+      "rek_user3_exh_fan_speed": {
+        "name": "Tryb 3 – wentylator wywiewu"
+      },
+      "rek_user4_set_point": {
+        "name": "Tryb 4 – temperatura zadana"
+      },
+      "rek_user4_sup_fan_speed": {
+        "name": "Tryb 4 – wentylator nawiewu"
+      },
+      "rek_user4_exh_fan_speed": {
+        "name": "Tryb 4 – wentylator wywiewu"
+      },
+      "rek_party_set_point": {
+        "name": "Tryb party – temperatura zadana"
+      },
+      "rek_party_sup_fan_speed": {
+        "name": "Tryb party – wentylator nawiewu"
+      },
+      "rek_party_exh_fan_speed": {
+        "name": "Tryb party – wentylator wywiewu"
+      },
+      "rek_party_dur": {
+        "name": "Czas trwania trybu party"
+      },
+      "rek_airing_exh_fan_speed": {
+        "name": "Wietrzenie – wentylator wywiewu"
+      },
+      "rek_airing_dur": {
+        "name": "Czas wietrzenia"
+      },
+      "re_koverpr_fan_speed_dif": {
+        "name": "Różnica wydajności wentylatorów (nadciśnienie)"
+      },
+      "gh_esum_open_temp": {
+        "name": "GWC – temperatura otwarcia (lato)"
+      },
+      "gh_ewint_open_temp_": {
+        "name": "GWC – temperatura otwarcia (zima)"
+      },
+      "gh_emax_open_time": {
+        "name": "GWC – maksymalny czas otwarcia"
+      },
+      "gh_eregen_time": {
+        "name": "GWC – czas regeneracji"
+      },
+      "gh_eman_start": {
+        "name": "GWC – start ręczny"
+      },
+      "re_kmod_state": {
+        "name": "Stan pracy rekuperatora"
+      },
+      "re_kmod_sett": {
+        "name": "Ustawienia trybu rekuperatora"
+      },
+      "by_pmod_state": {
+        "name": "Stan bypassu"
+      },
+      "gh_emod_state": {
+        "name": "Stan GWC"
+      },
+      "gh_emod_sett": {
+        "name": "Ustawienia GWC"
+      },
+      "shea_tmod_state": {
+        "name": "Stan nagrzewnicy wtórnej"
+      },
+      "phea_tmod_state": {
+        "name": "Stan nagrzewnicy wstępnej"
+      },
+      "cs_pmod_state": {
+        "name": "Stan CSP"
+      },
+      "outre_lstate": {
+        "name": "Stan wyjść przekaźnikowych"
+      },
+      "indi_nstate": {
+        "name": "Stan wejść cyfrowych"
+      },
+      "re_kexch_type": {
+        "name": "Typ wymiennika"
+      },
+      "rekws1": {
+        "name": "Parametr pracy WS1"
+      },
+      "rekws4": {
+        "name": "Parametr pracy WS4"
+      },
+      "resre_lcooler": {
+        "name": "Przypisanie przekaźnika chłodnicy"
+      },
+      "resre_lheater": {
+        "name": "Przypisanie przekaźnika nagrzewnicy"
+      },
+      "anse_nchoosen_sen": {
+        "name": "Wybrany czujnik analogowy"
+      },
+      "ansenai_nsen_num": {
+        "name": "Wejście czujnika analogowego"
+      },
+      "ad_cbin_a2": {
+        "name": "Wejście analogowe A2 (surowe)"
+      },
+      "in_eco_xadc8": {
+        "name": "Wejście analogowe ecoX 8 (surowe)"
+      },
+      "in_eco_xadc9": {
+        "name": "Wejście analogowe ecoX 9 (surowe)"
       }
     },
     "water_heater": {

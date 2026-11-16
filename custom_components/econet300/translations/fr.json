@@ -829,6 +829,177 @@
       },
       "schedule_water_heater_2": {
         "name": "Programme chauffe-eau 2"
+      },
+      "re_kcur_int_temp": {
+        "name": "Température de l'air extérieur"
+      },
+      "re_kcur_sup_temp": {
+        "name": "Température de l'air soufflé"
+      },
+      "re_kcur_beh_exch_temp": {
+        "name": "Température après l'échangeur"
+      },
+      "re_kcur_ext_temp": {
+        "name": "Température de l'air extrait"
+      },
+      "re_kcu_exh_temp": {
+        "name": "Température de l'air rejeté"
+      },
+      "re_kcur_ghe_temp": {
+        "name": "Température du puits canadien"
+      },
+      "re_kcur_set_point": {
+        "name": "Température de consigne"
+      },
+      "re_kcur_sup_fan_speed": {
+        "name": "Ventilateur de soufflage"
+      },
+      "re_kcur_exh_fan_speed": {
+        "name": "Ventilateur d'extraction"
+      },
+      "by_pcur_control": {
+        "name": "Ouverture du bypass"
+      },
+      "mixc_hcur_control": {
+        "name": "Commande de la chambre de mélange"
+      },
+      "shea_tcur_control": {
+        "name": "Commande de la batterie de post-chauffage"
+      },
+      "coo_lcur_control": {
+        "name": "Commande du refroidisseur"
+      },
+      "rek_user1_set_point": {
+        "name": "Mode 1 – température de consigne"
+      },
+      "rek_user1_sup_fan_speed": {
+        "name": "Mode 1 – ventilateur de soufflage"
+      },
+      "rek_user1_exh_fan_speed": {
+        "name": "Mode 1 – ventilateur d'extraction"
+      },
+      "rek_user2_set_point": {
+        "name": "Mode 2 – température de consigne"
+      },
+      "rek_user2_sup_fan_speed": {
+        "name": "Mode 2 – ventilateur de soufflage"
+      },
+      "rek_user2_exh_fan_speed": {
+        "name": "Mode 2 – ventilateur d'extraction"
+      },
+      "rek_user3_set_point": {
+        "name": "Mode 3 – température de consigne"
+      },
+      "rek_user3_sup_fan_speed": {
+        "name": "Mode 3 – ventilateur de soufflage"
+      },
+      "rek_user3_exh_fan_speed": {
+        "name": "Mode 3 – ventilateur d'extraction"
+      },
+      "rek_user4_set_point": {
+        "name": "Mode 4 – température de consigne"
+      },
+      "rek_user4_sup_fan_speed": {
+        "name": "Mode 4 – ventilateur de soufflage"
+      },
+      "rek_user4_exh_fan_speed": {
+        "name": "Mode 4 – ventilateur d'extraction"
+      },
+      "rek_party_set_point": {
+        "name": "Mode fête – température de consigne"
+      },
+      "rek_party_sup_fan_speed": {
+        "name": "Mode fête – ventilateur de soufflage"
+      },
+      "rek_party_exh_fan_speed": {
+        "name": "Mode fête – ventilateur d'extraction"
+      },
+      "rek_party_dur": {
+        "name": "Durée du mode fête"
+      },
+      "rek_airing_exh_fan_speed": {
+        "name": "Aération – ventilateur d'extraction"
+      },
+      "rek_airing_dur": {
+        "name": "Durée d'aération"
+      },
+      "re_koverpr_fan_speed_dif": {
+        "name": "Écart de vitesse des ventilateurs (surpression)"
+      },
+      "gh_esum_open_temp": {
+        "name": "Puits canadien – température d'ouverture (été)"
+      },
+      "gh_ewint_open_temp_": {
+        "name": "Puits canadien – température d'ouverture (hiver)"
+      },
+      "gh_emax_open_time": {
+        "name": "Puits canadien – durée max. d'ouverture"
+      },
+      "gh_eregen_time": {
+        "name": "Puits canadien – durée de régénération"
+      },
+      "gh_eman_start": {
+        "name": "Puits canadien – démarrage manuel"
+      },
+      "re_kmod_state": {
+        "name": "État de fonctionnement de la ventilation"
+      },
+      "re_kmod_sett": {
+        "name": "Réglages du mode de ventilation"
+      },
+      "by_pmod_state": {
+        "name": "État du bypass"
+      },
+      "gh_emod_state": {
+        "name": "État du puits canadien"
+      },
+      "gh_emod_sett": {
+        "name": "Réglages du puits canadien"
+      },
+      "shea_tmod_state": {
+        "name": "État de la batterie de post-chauffage"
+      },
+      "phea_tmod_state": {
+        "name": "État de la batterie de préchauffage"
+      },
+      "cs_pmod_state": {
+        "name": "État CSP"
+      },
+      "outre_lstate": {
+        "name": "État des sorties relais"
+      },
+      "indi_nstate": {
+        "name": "État des entrées numériques"
+      },
+      "re_kexch_type": {
+        "name": "Type d'échangeur"
+      },
+      "rekws1": {
+        "name": "Paramètre de fonctionnement WS1"
+      },
+      "rekws4": {
+        "name": "Paramètre de fonctionnement WS4"
+      },
+      "resre_lcooler": {
+        "name": "Affectation du relais du refroidisseur"
+      },
+      "resre_lheater": {
+        "name": "Affectation du relais de chauffage"
+      },
+      "anse_nchoosen_sen": {
+        "name": "Capteur analogique sélectionné"
+      },
+      "ansenai_nsen_num": {
+        "name": "Entrée du capteur analogique"
+      },
+      "ad_cbin_a2": {
+        "name": "Entrée analogique A2 (brute)"
+      },
+      "in_eco_xadc8": {
+        "name": "Entrée analogique ecoX 8 (brute)"
+      },
+      "in_eco_xadc9": {
+        "name": "Entrée analogique ecoX 9 (brute)"
       }
     }
   }

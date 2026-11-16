@@ -23,6 +23,7 @@ from .common_functions import (
     get_duplicate_entity_key,
     get_validated_entity_component,
     is_ecomax360i_controller,
+    is_ecovent_controller,
     mixer_exists,
 )
 from .const import (
@@ -546,6 +547,9 @@ async def async_setup_entry(
     controller_id = sys_params.get("controllerID")
     if is_ecomax360i_controller(controller_id):
         _LOGGER.info("Skipping unsupported static boiler control for ecoMAX360i")
+    elif is_ecovent_controller(controller_id):
+        # A recuperator has no boiler; BOILER_CONTROL writes must never reach it.
+        _LOGGER.info("Skipping boiler control for ecoVENT ventilation controller")
     else:
         # Initial state is synced automatically via _handle_coordinator_update()
         # once the entity is added to Home Assistant.

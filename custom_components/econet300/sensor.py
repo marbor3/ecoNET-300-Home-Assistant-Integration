@@ -52,6 +52,7 @@ from .common_functions import (
     get_latest_alarm,
     is_ecomax360i_controller,
     is_ecosol_controller,
+    is_ecovent_controller,
     mixer_exists,
     parse_alarm_entry,
 )
@@ -68,6 +69,7 @@ from .const import (
     ECOMAX360I_SENSORS,
     ECOSOL_SENSORS,
     ECOSTER_SENSOR_KEY_PREFIXES,
+    ECOVENT_SENSORS,
     EDIT_PARAMS_DATA_SENSOR_MAP,
     ENTITY_CATEGORY,
     ENTITY_PRECISION,
@@ -989,6 +991,8 @@ def _controller_sensor_key_candidates(controller_id: str | None) -> set[str]:
         return ECOSOL_SENSORS.copy()
     if is_ecomax360i_controller(controller_id):
         return ECOMAX360I_SENSORS.copy()
+    if is_ecovent_controller(controller_id):
+        return ECOVENT_SENSORS.copy()
     return SENSOR_MAP_KEY["_default"].copy()
 
 

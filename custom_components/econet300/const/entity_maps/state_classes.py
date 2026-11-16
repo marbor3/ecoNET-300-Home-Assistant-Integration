@@ -9,6 +9,27 @@ DEFAULT_SENSOR_STATE_CLASS = _SensorStateClass.MEASUREMENT
 
 # By default all sensors state_class are MEASUREMENT (see DEFAULT_SENSOR_STATE_CLASS)
 STATE_CLASS_MAP: dict[str, _SensorStateClass | None] = {
+    # ecoVENT recuperator (Plum ventilation controller)
+    "REKmodState": None,
+    "REKmodSett": None,
+    "BYPmodState": None,
+    "GHEmodState": None,
+    "GHEmodSett": None,
+    "SHEATmodState": None,
+    "PHEATmodState": None,
+    "CSPmodState": None,
+    "OUTRELstate": None,
+    "INDINstate": None,
+    "REKexchType": None,
+    "REKWS1": None,
+    "REKWS4": None,
+    "RESRELcooler": None,
+    "RESRELheater": None,
+    "ANSENchoosenSen": None,
+    "ANSENAINsenNum": None,
+    "ADCbinA2": None,
+    "inEcoXADC8": None,
+    "inEcoXADC9": None,
     "lambdaStatus": None,
     "mode": None,
     "thermostat": None,

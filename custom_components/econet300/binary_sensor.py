@@ -23,6 +23,7 @@ from .common_functions import (
     get_active_alarm,
     get_entity_component,
     is_ecosol_controller,
+    is_ecovent_controller,
 )
 from .const import (
     API_REG_PARAMS_URI,
@@ -31,6 +32,7 @@ from .const import (
     DOMAIN,
     ECOSOL_BINARY_SENSORS,
     ECOSTER_BINARY_SENSOR_KEY_PREFIXES,
+    ECOVENT_BINARY_SENSORS,
     ENTITY_BINARY_DEVICE_CLASS_MAP,
     ENTITY_CATEGORY,
     MIXER_PUMP_BINARY_SENSOR_KEYS,
@@ -260,18 +262,26 @@ def create_binary_sensors(coordinator: EconetDataCoordinator, api: Econet300Api)
     # Get controller ID to determine which binary sensors to create
     controller_id = data_sysParams.get("controllerID", None)
 
-    # Always use default binary sensor mapping for all controllers
-    binary_sensor_keys = BINARY_SENSOR_MAP_KEY["_default"].copy()
-    if controller_id and controller_id in BINARY_SENSOR_MAP_KEY:
+    # Default binary sensor mapping for all controllers, except ecoVENT
+    # recuperators, which have no boiler outputs (pumps, feeder, lighter, fuel
+    # consumption calculator) and only expose module connectivity.
+    if is_ecovent_controller(controller_id):
+        binary_sensor_keys = ECOVENT_BINARY_SENSORS.copy()
         _LOGGER.info(
-            "ControllerID '%s' found in mapping, but using default binary sensor mapping",
-            controller_id,
+            "Using ecoVENT binary sensor mapping for controllerID: %s", controller_id
         )
     else:
-        _LOGGER.info(
-            "ControllerID '%s' not found in mapping, using default binary sensor mapping",
-            controller_id or "None",
-        )
+        binary_sensor_keys = BINARY_SENSOR_MAP_KEY["_default"].copy()
+        if controller_id and controller_id in BINARY_SENSOR_MAP_KEY:
+            _LOGGER.info(
+                "ControllerID '%s' found in mapping, but using default binary sensor mapping",
+                controller_id,
+            )
+        else:
+            _LOGGER.info(
+                "ControllerID '%s' not found in mapping, using default binary sensor mapping",
+                controller_id or "None",
+            )
 
     # Always filter out ecoSTER binary sensors from controller binary sensors since they are created as separate devices
     ecoSTER_binary_sensors = BINARY_SENSOR_MAP_KEY.get("ecoSter", set())

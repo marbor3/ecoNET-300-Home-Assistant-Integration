@@ -249,6 +249,77 @@ ECOSOL_SENSORS = {
     "ecosrvSoftVer",
 }
 
+# ecoVENT ventilation / heat-recovery (recuperator) controller sensors.
+# Keys as reported in regParams by a real ecoVENT (ecoNET300 module S003.50).
+ECOVENT_SENSORS = {
+    "REKcurIntTemp",
+    "REKcurSupTemp",
+    "REKcurBehExchTemp",
+    "REKcurExtTemp",
+    "REKcuExhTemp",
+    "REKcurGHETemp",
+    "REKcurSetPoint",
+    "REKcurSupFanSpeed",
+    "REKcurExhFanSpeed",
+    "BYPcurControl",
+    "MIXCHcurControl",
+    "SHEATcurControl",
+    "COOLcurControl",
+    "REKUser1SetPoint",
+    "REKUser1SupFanSpeed",
+    "REKUser1ExhFanSpeed",
+    "REKUser2SetPoint",
+    "REKUser2SupFanSpeed",
+    "REKUser2ExhFanSpeed",
+    "REKUser3SetPoint",
+    "REKUser3SupFanSpeed",
+    "REKUser3ExhFanSpeed",
+    "REKUser4SetPoint",
+    "REKUser4SupFanSpeed",
+    "REKUser4ExhFanSpeed",
+    "REKPartySetPoint",
+    "REKPartySupFanSpeed",
+    "REKPartyExhFanSpeed",
+    "REKPartyDur",
+    "REKAiringExhFanSpeed",
+    "REKAiringDur",
+    "REKoverprFanSpeedDif",
+    "GHEsumOpenTemp",
+    "GHEwintOpenTemp_",
+    "GHEmaxOpenTime",
+    "GHEregenTime",
+    "GHEmanStart",
+    "REKmodState",
+    "REKmodSett",
+    "BYPmodState",
+    "GHEmodState",
+    "GHEmodSett",
+    "SHEATmodState",
+    "PHEATmodState",
+    "CSPmodState",
+    "OUTRELstate",
+    "INDINstate",
+    "REKexchType",
+    "REKWS1",
+    "REKWS4",
+    "RESRELcooler",
+    "RESRELheater",
+    "ANSENchoosenSen",
+    "ANSENAINsenNum",
+    "ADCbinA2",
+    "inEcoXADC8",
+    "inEcoXADC9",
+    # Diagnostic sensors (sysParams)
+    "quality",
+    "signal",
+    "softVer",
+    "routerType",
+    "protocolType",
+    "controllerID",
+    "moduleASoftVer",
+    "modulePanelSoftVer",
+}
+
 # Reference-only dict key for SENSOR_MAP_KEY / BINARY_SENSOR_MAP_KEY (not a live controllerID)
 ECOSOL_CONTROLLER_MAP_REFERENCE_KEY = "ecoSOL [n]"
 
@@ -292,12 +363,13 @@ DEFAULT_SENSORS = {
 }
 
 # Main sensor mapping by controller type
-# Sensor platform: is_ecosol_controller() → ECOSOL_SENSORS;
+# Sensor platform: is_ecosol_controller() → ECOSOL_SENSORS; is_ecovent_controller() → ECOVENT_SENSORS;
 # is_ecomax360i_controller() → ECOMAX360I_SENSORS (see sensor.py); else DEFAULT_SENSORS.
 # ecoSter / lambda entries remain reference-only for now.
 SENSOR_MAP_KEY = {
     "ecoMAX360i": ECOMAX360I_SENSORS,  # Runtime via is_ecomax360i_controller()
     ECOSOL_CONTROLLER_MAP_REFERENCE_KEY: ECOSOL_SENSORS,  # Reference — runtime uses is_ecosol_controller()
+    "ecoVENT": ECOVENT_SENSORS,  # Runtime via is_ecovent_controller()
     "ecoSter": ECOSTER_SENSORS,  # Reference only - not used
     COMPONENT_LAMBDA: LAMBDA_SENSORS,  # Reference only - not used
     "_default": DEFAULT_SENSORS,  # Default for non-ecoSOL controllers
@@ -373,10 +445,20 @@ ECOSOL_BINARY_SENSORS = {
     "ecosrvHttps",
 }
 
+# ecoVENT recuperator binary sensors: module connectivity only. The boiler-oriented
+# defaults (pumps, feeder, lighter, fuel consumption calculator) do not apply.
+ECOVENT_BINARY_SENSORS = {
+    "wifi",
+    "lan",
+    "mainSrv",
+    "ecosrvHttps",
+}
+
 # Main binary sensor mapping by controller type
 # All controllers use DEFAULT_BINARY_SENSORS (specific mappings are for reference only)
 BINARY_SENSOR_MAP_KEY = {
     "_default": DEFAULT_BINARY_SENSORS,  # Always used for all controllers
     ECOSOL_CONTROLLER_MAP_REFERENCE_KEY: ECOSOL_BINARY_SENSORS,  # Reference — runtime uses is_ecosol_controller()
+    "ecoVENT": ECOVENT_BINARY_SENSORS,  # Runtime via is_ecovent_controller()
     "ecoSter": ECOSTER_BINARY_SENSORS,  # Reference only - not used
 }

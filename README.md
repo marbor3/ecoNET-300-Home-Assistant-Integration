@@ -59,6 +59,7 @@ The integration supports **7 languages** with comprehensive translations:
 - **ecoSOL 500** solar collector system controller
 - **ecoSOL 301** solar controller (flat `regParams` / `T1`, `P1`, …)
 - **ecoSOL** solar thermal controller
+- **ecoVENT** ventilation / heat recovery (recuperator) controller (read-only sensors)
 - **SControl MK1** control module
 - Other ecoNET300 compatible devices
 

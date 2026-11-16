@@ -838,6 +838,177 @@
       },
       "schedule_water_heater_2": {
         "name": "Rozvrh ohřívače vody 2"
+      },
+      "re_kcur_int_temp": {
+        "name": "Teplota venkovního vzduchu"
+      },
+      "re_kcur_sup_temp": {
+        "name": "Teplota přiváděného vzduchu"
+      },
+      "re_kcur_beh_exch_temp": {
+        "name": "Teplota za výměníkem"
+      },
+      "re_kcur_ext_temp": {
+        "name": "Teplota odváděného vzduchu"
+      },
+      "re_kcu_exh_temp": {
+        "name": "Teplota odpadního vzduchu"
+      },
+      "re_kcur_ghe_temp": {
+        "name": "Teplota zemního výměníku"
+      },
+      "re_kcur_set_point": {
+        "name": "Požadovaná teplota"
+      },
+      "re_kcur_sup_fan_speed": {
+        "name": "Přívodní ventilátor"
+      },
+      "re_kcur_exh_fan_speed": {
+        "name": "Odtahový ventilátor"
+      },
+      "by_pcur_control": {
+        "name": "Otevření bypassu"
+      },
+      "mixc_hcur_control": {
+        "name": "Řízení směšovací komory"
+      },
+      "shea_tcur_control": {
+        "name": "Řízení dohřevu"
+      },
+      "coo_lcur_control": {
+        "name": "Řízení chladiče"
+      },
+      "rek_user1_set_point": {
+        "name": "Režim 1 – požadovaná teplota"
+      },
+      "rek_user1_sup_fan_speed": {
+        "name": "Režim 1 – přívodní ventilátor"
+      },
+      "rek_user1_exh_fan_speed": {
+        "name": "Režim 1 – odtahový ventilátor"
+      },
+      "rek_user2_set_point": {
+        "name": "Režim 2 – požadovaná teplota"
+      },
+      "rek_user2_sup_fan_speed": {
+        "name": "Režim 2 – přívodní ventilátor"
+      },
+      "rek_user2_exh_fan_speed": {
+        "name": "Režim 2 – odtahový ventilátor"
+      },
+      "rek_user3_set_point": {
+        "name": "Režim 3 – požadovaná teplota"
+      },
+      "rek_user3_sup_fan_speed": {
+        "name": "Režim 3 – přívodní ventilátor"
+      },
+      "rek_user3_exh_fan_speed": {
+        "name": "Režim 3 – odtahový ventilátor"
+      },
+      "rek_user4_set_point": {
+        "name": "Režim 4 – požadovaná teplota"
+      },
+      "rek_user4_sup_fan_speed": {
+        "name": "Režim 4 – přívodní ventilátor"
+      },
+      "rek_user4_exh_fan_speed": {
+        "name": "Režim 4 – odtahový ventilátor"
+      },
+      "rek_party_set_point": {
+        "name": "Režim párty – požadovaná teplota"
+      },
+      "rek_party_sup_fan_speed": {
+        "name": "Režim párty – přívodní ventilátor"
+      },
+      "rek_party_exh_fan_speed": {
+        "name": "Režim párty – odtahový ventilátor"
+      },
+      "rek_party_dur": {
+        "name": "Doba režimu párty"
+      },
+      "rek_airing_exh_fan_speed": {
+        "name": "Větrání – odtahový ventilátor"
+      },
+      "rek_airing_dur": {
+        "name": "Doba větrání"
+      },
+      "re_koverpr_fan_speed_dif": {
+        "name": "Rozdíl výkonu ventilátorů (přetlak)"
+      },
+      "gh_esum_open_temp": {
+        "name": "Zemní výměník – teplota otevření (léto)"
+      },
+      "gh_ewint_open_temp_": {
+        "name": "Zemní výměník – teplota otevření (zima)"
+      },
+      "gh_emax_open_time": {
+        "name": "Zemní výměník – max. doba otevření"
+      },
+      "gh_eregen_time": {
+        "name": "Zemní výměník – doba regenerace"
+      },
+      "gh_eman_start": {
+        "name": "Zemní výměník – ruční start"
+      },
+      "re_kmod_state": {
+        "name": "Provozní stav rekuperace"
+      },
+      "re_kmod_sett": {
+        "name": "Nastavení režimu rekuperace"
+      },
+      "by_pmod_state": {
+        "name": "Stav bypassu"
+      },
+      "gh_emod_state": {
+        "name": "Stav zemního výměníku"
+      },
+      "gh_emod_sett": {
+        "name": "Nastavení zemního výměníku"
+      },
+      "shea_tmod_state": {
+        "name": "Stav dohřevu"
+      },
+      "phea_tmod_state": {
+        "name": "Stav předehřevu"
+      },
+      "cs_pmod_state": {
+        "name": "Stav CSP"
+      },
+      "outre_lstate": {
+        "name": "Stav reléových výstupů"
+      },
+      "indi_nstate": {
+        "name": "Stav digitálních vstupů"
+      },
+      "re_kexch_type": {
+        "name": "Typ výměníku"
+      },
+      "rekws1": {
+        "name": "Provozní parametr WS1"
+      },
+      "rekws4": {
+        "name": "Provozní parametr WS4"
+      },
+      "resre_lcooler": {
+        "name": "Přiřazení relé chladiče"
+      },
+      "resre_lheater": {
+        "name": "Přiřazení relé ohřívače"
+      },
+      "anse_nchoosen_sen": {
+        "name": "Vybraný analogový snímač"
+      },
+      "ansenai_nsen_num": {
+        "name": "Vstup analogového snímače"
+      },
+      "ad_cbin_a2": {
+        "name": "Analogový vstup A2 (surový)"
+      },
+      "in_eco_xadc8": {
+        "name": "Analogový vstup ecoX 8 (surový)"
+      },
+      "in_eco_xadc9": {
+        "name": "Analogový vstup ecoX 9 (surový)"
       }
     }
   }
