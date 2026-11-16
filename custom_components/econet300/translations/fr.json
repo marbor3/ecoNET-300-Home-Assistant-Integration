@@ -132,6 +132,17 @@
     "select": {
       "heater_mode": {
         "name": "Mode de chauffage"
+      },
+      "ecovent_main_mode": {
+        "name": "Mode principal",
+        "state": {
+          "stop": "Arrêt",
+          "schedule": "Programmation",
+          "user_mode_1": "Mode 1",
+          "user_mode_2": "Mode 2",
+          "user_mode_3": "Mode 3",
+          "user_mode_4": "Mode 4"
+        }
       }
     },
     "number": {
@@ -149,6 +160,63 @@
       },
       "ster_temp_antifreez": {
         "name": "Température de consigne antigel thermostat {index}"
+      },
+      "ecovent_rek_user1_set_point": {
+        "name": "Mode 1 – température de consigne"
+      },
+      "ecovent_presal_user1_sup_flow": {
+        "name": "Mode 1 – débit de soufflage"
+      },
+      "ecovent_presal_user1_exh_flow": {
+        "name": "Mode 1 – débit d'extraction"
+      },
+      "ecovent_rek_user2_set_point": {
+        "name": "Mode 2 – température de consigne"
+      },
+      "ecovent_presal_user2_sup_flow": {
+        "name": "Mode 2 – débit de soufflage"
+      },
+      "ecovent_presal_user2_exh_flow": {
+        "name": "Mode 2 – débit d'extraction"
+      },
+      "ecovent_rek_user3_set_point": {
+        "name": "Mode 3 – température de consigne"
+      },
+      "ecovent_presal_user3_sup_flow": {
+        "name": "Mode 3 – débit de soufflage"
+      },
+      "ecovent_presal_user3_exh_flow": {
+        "name": "Mode 3 – débit d'extraction"
+      },
+      "ecovent_rek_user4_set_point": {
+        "name": "Mode 4 – température de consigne"
+      },
+      "ecovent_presal_user4_sup_flow": {
+        "name": "Mode 4 – débit de soufflage"
+      },
+      "ecovent_presal_user4_exh_flow": {
+        "name": "Mode 4 – débit d'extraction"
+      },
+      "ecovent_rek_party_set_point": {
+        "name": "Fête – température de consigne"
+      },
+      "ecovent_presal_party_sup_flow": {
+        "name": "Fête – débit de soufflage"
+      },
+      "ecovent_presal_party_exh_flow": {
+        "name": "Fête – débit d'extraction"
+      },
+      "ecovent_rek_party_dur": {
+        "name": "Fête – durée"
+      },
+      "ecovent_presal_airing_exh_flow": {
+        "name": "Aération – débit d'extraction"
+      },
+      "ecovent_rek_airing_dur": {
+        "name": "Aération – durée"
+      },
+      "ecovent_rek_out_dur": {
+        "name": "Absence – durée"
       }
     },
     "binary_sensor": {

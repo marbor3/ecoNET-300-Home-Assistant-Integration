@@ -1,0 +1,211 @@
+{
+    "data": {
+        "17": {
+            "value": 4,
+            "maxv": 0,
+            "minv": 0,
+            "unit": 0,
+            "edit": true,
+            "mult": 1,
+            "name": "REKWS1"
+        },
+        "20": {
+            "value": 0,
+            "maxv": 4,
+            "minv": 0,
+            "unit": 0,
+            "edit": true,
+            "mult": 1,
+            "name": "REKWS4"
+        },
+        "141": {
+            "value": 3,
+            "maxv": 10,
+            "minv": 0,
+            "unit": 4,
+            "edit": true,
+            "mult": 1,
+            "name": "REKPartyDur"
+        },
+        "142": {
+            "value": 1,
+            "maxv": 10,
+            "minv": 0,
+            "unit": 4,
+            "edit": true,
+            "mult": 1,
+            "name": "REKOutDur"
+        },
+        "143": {
+            "value": 15,
+            "maxv": 20,
+            "minv": 0,
+            "unit": 3,
+            "edit": true,
+            "mult": 1,
+            "name": "REKAiringDur"
+        },
+        "261": {
+            "value": 20,
+            "maxv": 30,
+            "minv": 15,
+            "unit": 1,
+            "edit": true,
+            "mult": 1,
+            "name": "REKPartySetPoint"
+        },
+        "286": {
+            "value": 18,
+            "maxv": 30,
+            "minv": 15,
+            "unit": 1,
+            "edit": true,
+            "mult": 1,
+            "name": "REKUser1SetPoint"
+        },
+        "287": {
+            "value": 18,
+            "maxv": 30,
+            "minv": 15,
+            "unit": 1,
+            "edit": true,
+            "mult": 1,
+            "name": "REKUser2SetPoint"
+        },
+        "288": {
+            "value": 20,
+            "maxv": 30,
+            "minv": 15,
+            "unit": 0,
+            "edit": true,
+            "mult": 1,
+            "name": "REKUser3SetPoint"
+        },
+        "459": {
+            "value": 20,
+            "maxv": 30,
+            "minv": 15,
+            "unit": 0,
+            "edit": true,
+            "mult": 1,
+            "name": "REKUser4SetPoint"
+        },
+        "337": {
+            "value": 3,
+            "maxv": 100,
+            "minv": 0,
+            "unit": 0,
+            "edit": true,
+            "mult": 1,
+            "name": "BYPPIDcontP"
+        },
+        "410": {
+            "value": 500,
+            "maxv": 10000,
+            "minv": 0,
+            "unit": 0,
+            "edit": true,
+            "mult": 1,
+            "name": "ENRECmaxFlow"
+        },
+        "925": {
+            "value": 400,
+            "maxv": 500,
+            "minv": 0,
+            "unit": 71,
+            "edit": true,
+            "mult": 1,
+            "name": "PRESALUser1SupFlow"
+        },
+        "926": {
+            "value": 500,
+            "maxv": 500,
+            "minv": 0,
+            "unit": 71,
+            "edit": true,
+            "mult": 1,
+            "name": "PRESALUser2SupFlow"
+        },
+        "927": {
+            "value": 100,
+            "maxv": 500,
+            "minv": 0,
+            "unit": 71,
+            "edit": true,
+            "mult": 1,
+            "name": "PRESALUser3SupFlow"
+        },
+        "928": {
+            "value": 100,
+            "maxv": 500,
+            "minv": 0,
+            "unit": 71,
+            "edit": true,
+            "mult": 1,
+            "name": "PRESALUser4SupFlow"
+        },
+        "929": {
+            "value": 400,
+            "maxv": 500,
+            "minv": 0,
+            "unit": 71,
+            "edit": true,
+            "mult": 1,
+            "name": "PRESALUser1ExhFlow"
+        },
+        "930": {
+            "value": 500,
+            "maxv": 500,
+            "minv": 0,
+            "unit": 71,
+            "edit": true,
+            "mult": 1,
+            "name": "PRESALUser2ExhFlow"
+        },
+        "931": {
+            "value": 100,
+            "maxv": 500,
+            "minv": 0,
+            "unit": 71,
+            "edit": true,
+            "mult": 1,
+            "name": "PRESALUser3ExhFlow"
+        },
+        "932": {
+            "value": 100,
+            "maxv": 500,
+            "minv": 0,
+            "unit": 71,
+            "edit": true,
+            "mult": 1,
+            "name": "PRESALUser4ExhFlow"
+        },
+        "934": {
+            "value": 500,
+            "maxv": 4000,
+            "minv": 0,
+            "unit": 71,
+            "edit": true,
+            "mult": 1,
+            "name": "PRESALAiringExhFlow"
+        },
+        "937": {
+            "value": 100,
+            "maxv": 4000,
+            "minv": 0,
+            "unit": 71,
+            "edit": true,
+            "mult": 1,
+            "name": "PRESALPartySupFlow"
+        },
+        "938": {
+            "value": 100,
+            "maxv": 4000,
+            "minv": 0,
+            "unit": 71,
+            "edit": true,
+            "mult": 1,
+            "name": "PRESALPartyExhFlow"
+        }
+    }
+}

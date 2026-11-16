@@ -5,7 +5,8 @@
 
 ### Added
 
-- **ecoVENT ventilation (heat recovery) controllers**: recuperators with a Plum **ecoVENT** controller (`controllerID` `ecoVENT`, for example Frapol units) are recognised. Their `REK*`, `BYP*` and `GHE*` values get proper names, units and device classes: outdoor, supply, extract and exhaust air temperatures, target temperature, supply and exhaust fan speed, bypass opening, and the per-mode, party and airing presets. Presets and raw status codes are diagnostics; status codes keep no long-term statistics. Names in all six languages. The values are read-only for now.
+- **ecoVENT ventilation (heat recovery) controllers**: recuperators with a Plum **ecoVENT** controller (`controllerID` `ecoVENT`, for example Frapol units) are recognised. Their `REK*`, `BYP*` and `GHE*` values get proper names, units and device classes: outdoor, supply, extract and exhaust air temperatures, target temperature, supply and exhaust fan speed, bypass opening, and the per-mode, party and airing presets. Presets and raw status codes are diagnostics; status codes keep no long-term statistics. Names in all six languages.
+- **ecoVENT settings**: the main operating mode (*Stop*, *Schedule*, *Mode 1-4*) is a select, and the user settings are numbers: target temperature and supply/exhaust airflow (m³/h) of each user mode, the party target temperature, airflows and duration, the airing airflow and duration, and the away duration. Limits come from the controller's own editParams; airflows are also capped at the unit's maximum airflow. Values are written by parameter name (`newParam`) and refreshed from editParams, which is now read on ecoVENT controllers. Service parameters are not exposed. The temporary mode (party / airing / away) is not a control yet, because the meaning of its values is not confirmed.
 
 ### Fixed
 

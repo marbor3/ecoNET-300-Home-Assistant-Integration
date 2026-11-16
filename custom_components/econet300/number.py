@@ -58,6 +58,7 @@ from .const import (
     SERVICE_COORDINATOR,
     UNIT_NAME_TO_HA_UNIT,
 )
+from .ecovent import create_ecovent_numbers
 from .entity import (
     EconetEntity,
     EcoSterEntity,
@@ -1320,6 +1321,9 @@ async def async_setup_entry(
     api = hass.data[DOMAIN][entry.entry_id][SERVICE_API]
 
     entities: list[NumberEntity] = []
+
+    # ecoVENT recuperator settings (empty list for every other controller)
+    entities.extend(create_ecovent_numbers(coordinator, api))
 
     # Define basic parameter IDs from NUMBER_MAP (always shown)
     basic_param_ids = set(NUMBER_MAP.keys())

@@ -225,6 +225,17 @@
       },
       "output_h2_and_h3": {
         "name": "Wyjście H2 i H3"
+      },
+      "ecovent_main_mode": {
+        "name": "Główny tryb",
+        "state": {
+          "stop": "Stop",
+          "schedule": "Harmonogram",
+          "user_mode_1": "Tryb 1",
+          "user_mode_2": "Tryb 2",
+          "user_mode_3": "Tryb 3",
+          "user_mode_4": "Tryb 4"
+        }
       }
     },
     "event": {
@@ -330,6 +341,63 @@
       },
       "ster_temp_antifreez": {
         "name": "Temperatura zadana przeciwzamrożeniowa termostatu {index}"
+      },
+      "ecovent_rek_user1_set_point": {
+        "name": "Tryb 1 – temperatura zadana"
+      },
+      "ecovent_presal_user1_sup_flow": {
+        "name": "Tryb 1 – przepływ nawiew"
+      },
+      "ecovent_presal_user1_exh_flow": {
+        "name": "Tryb 1 – przepływ wywiew"
+      },
+      "ecovent_rek_user2_set_point": {
+        "name": "Tryb 2 – temperatura zadana"
+      },
+      "ecovent_presal_user2_sup_flow": {
+        "name": "Tryb 2 – przepływ nawiew"
+      },
+      "ecovent_presal_user2_exh_flow": {
+        "name": "Tryb 2 – przepływ wywiew"
+      },
+      "ecovent_rek_user3_set_point": {
+        "name": "Tryb 3 – temperatura zadana"
+      },
+      "ecovent_presal_user3_sup_flow": {
+        "name": "Tryb 3 – przepływ nawiew"
+      },
+      "ecovent_presal_user3_exh_flow": {
+        "name": "Tryb 3 – przepływ wywiew"
+      },
+      "ecovent_rek_user4_set_point": {
+        "name": "Tryb 4 – temperatura zadana"
+      },
+      "ecovent_presal_user4_sup_flow": {
+        "name": "Tryb 4 – przepływ nawiew"
+      },
+      "ecovent_presal_user4_exh_flow": {
+        "name": "Tryb 4 – przepływ wywiew"
+      },
+      "ecovent_rek_party_set_point": {
+        "name": "Party – temperatura zadana"
+      },
+      "ecovent_presal_party_sup_flow": {
+        "name": "Party – przepływ nawiew"
+      },
+      "ecovent_presal_party_exh_flow": {
+        "name": "Party – przepływ wywiew"
+      },
+      "ecovent_rek_party_dur": {
+        "name": "Party – czas trwania"
+      },
+      "ecovent_presal_airing_exh_flow": {
+        "name": "Wietrzenie – przepływ wywiew"
+      },
+      "ecovent_rek_airing_dur": {
+        "name": "Wietrzenie – czas trwania"
+      },
+      "ecovent_rek_out_dur": {
+        "name": "Wyjście – czas trwania"
       }
     },
     "binary_sensor": {

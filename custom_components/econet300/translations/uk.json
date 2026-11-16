@@ -132,6 +132,17 @@
     "select": {
       "heater_mode": {
         "name": "Режим опалення"
+      },
+      "ecovent_main_mode": {
+        "name": "Основний режим",
+        "state": {
+          "stop": "Стоп",
+          "schedule": "Розклад",
+          "user_mode_1": "Режим 1",
+          "user_mode_2": "Режим 2",
+          "user_mode_3": "Режим 3",
+          "user_mode_4": "Режим 4"
+        }
       }
     },
     "number": {
@@ -149,6 +160,63 @@
       },
       "ster_temp_antifreez": {
         "name": "Задана температура антизамерзання кімнатного термостата {index}"
+      },
+      "ecovent_rek_user1_set_point": {
+        "name": "Режим 1 – задана температура"
+      },
+      "ecovent_presal_user1_sup_flow": {
+        "name": "Режим 1 – витрата припливу"
+      },
+      "ecovent_presal_user1_exh_flow": {
+        "name": "Режим 1 – витрата витяжки"
+      },
+      "ecovent_rek_user2_set_point": {
+        "name": "Режим 2 – задана температура"
+      },
+      "ecovent_presal_user2_sup_flow": {
+        "name": "Режим 2 – витрата припливу"
+      },
+      "ecovent_presal_user2_exh_flow": {
+        "name": "Режим 2 – витрата витяжки"
+      },
+      "ecovent_rek_user3_set_point": {
+        "name": "Режим 3 – задана температура"
+      },
+      "ecovent_presal_user3_sup_flow": {
+        "name": "Режим 3 – витрата припливу"
+      },
+      "ecovent_presal_user3_exh_flow": {
+        "name": "Режим 3 – витрата витяжки"
+      },
+      "ecovent_rek_user4_set_point": {
+        "name": "Режим 4 – задана температура"
+      },
+      "ecovent_presal_user4_sup_flow": {
+        "name": "Режим 4 – витрата припливу"
+      },
+      "ecovent_presal_user4_exh_flow": {
+        "name": "Режим 4 – витрата витяжки"
+      },
+      "ecovent_rek_party_set_point": {
+        "name": "Вечірка – задана температура"
+      },
+      "ecovent_presal_party_sup_flow": {
+        "name": "Вечірка – витрата припливу"
+      },
+      "ecovent_presal_party_exh_flow": {
+        "name": "Вечірка – витрата витяжки"
+      },
+      "ecovent_rek_party_dur": {
+        "name": "Вечірка – тривалість"
+      },
+      "ecovent_presal_airing_exh_flow": {
+        "name": "Провітрювання – витрата витяжки"
+      },
+      "ecovent_rek_airing_dur": {
+        "name": "Провітрювання – тривалість"
+      },
+      "ecovent_rek_out_dur": {
+        "name": "Відсутність – тривалість"
       }
     },
     "binary_sensor": {

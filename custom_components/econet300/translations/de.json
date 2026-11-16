@@ -225,6 +225,17 @@
       },
       "output_h2_and_h3": {
         "name": "Ausgang H2 und H3"
+      },
+      "ecovent_main_mode": {
+        "name": "Hauptmodus",
+        "state": {
+          "stop": "Stopp",
+          "schedule": "Zeitplan",
+          "user_mode_1": "Modus 1",
+          "user_mode_2": "Modus 2",
+          "user_mode_3": "Modus 3",
+          "user_mode_4": "Modus 4"
+        }
       }
     },
     "event": {
@@ -330,6 +341,63 @@
       },
       "ster_temp_antifreez": {
         "name": "Raumthermostat {index} Frostschutztemperatur"
+      },
+      "ecovent_rek_user1_set_point": {
+        "name": "Modus 1 Solltemperatur"
+      },
+      "ecovent_presal_user1_sup_flow": {
+        "name": "Modus 1 Zuluftmenge"
+      },
+      "ecovent_presal_user1_exh_flow": {
+        "name": "Modus 1 Abluftmenge"
+      },
+      "ecovent_rek_user2_set_point": {
+        "name": "Modus 2 Solltemperatur"
+      },
+      "ecovent_presal_user2_sup_flow": {
+        "name": "Modus 2 Zuluftmenge"
+      },
+      "ecovent_presal_user2_exh_flow": {
+        "name": "Modus 2 Abluftmenge"
+      },
+      "ecovent_rek_user3_set_point": {
+        "name": "Modus 3 Solltemperatur"
+      },
+      "ecovent_presal_user3_sup_flow": {
+        "name": "Modus 3 Zuluftmenge"
+      },
+      "ecovent_presal_user3_exh_flow": {
+        "name": "Modus 3 Abluftmenge"
+      },
+      "ecovent_rek_user4_set_point": {
+        "name": "Modus 4 Solltemperatur"
+      },
+      "ecovent_presal_user4_sup_flow": {
+        "name": "Modus 4 Zuluftmenge"
+      },
+      "ecovent_presal_user4_exh_flow": {
+        "name": "Modus 4 Abluftmenge"
+      },
+      "ecovent_rek_party_set_point": {
+        "name": "Party Solltemperatur"
+      },
+      "ecovent_presal_party_sup_flow": {
+        "name": "Party Zuluftmenge"
+      },
+      "ecovent_presal_party_exh_flow": {
+        "name": "Party Abluftmenge"
+      },
+      "ecovent_rek_party_dur": {
+        "name": "Party Dauer"
+      },
+      "ecovent_presal_airing_exh_flow": {
+        "name": "Stoßlüften Abluftmenge"
+      },
+      "ecovent_rek_airing_dur": {
+        "name": "Stoßlüften Dauer"
+      },
+      "ecovent_rek_out_dur": {
+        "name": "Außer Haus Dauer"
       }
     },
     "binary_sensor": {

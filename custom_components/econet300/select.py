@@ -44,6 +44,7 @@ from .const import (
     SERVICE_API,
     SERVICE_COORDINATOR,
 )
+from .ecovent import create_ecovent_selects
 from .entity import EconetEntity, get_device_info_for_component
 from .water_heater import edit_param_owned_by_dhw
 
@@ -855,6 +856,9 @@ async def async_setup_entry(
         _LOGGER.debug("Created select entity: %s", select_key)
 
     _LOGGER.info("Created %d static select entities", len(entities))
+
+    # ecoVENT main operating mode (empty list for every other controller)
+    entities.extend(create_ecovent_selects(coordinator, api))
 
     # Create dynamic select entities from mergedData
     dynamic_selects = create_dynamic_selects(coordinator, api)

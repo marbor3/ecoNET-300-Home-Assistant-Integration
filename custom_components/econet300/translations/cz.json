@@ -141,6 +141,17 @@
       },
       "heater_mode_auto": {
         "name": "Auto"
+      },
+      "ecovent_main_mode": {
+        "name": "Hlavní režim",
+        "state": {
+          "stop": "Stop",
+          "schedule": "Harmonogram",
+          "user_mode_1": "Režim 1",
+          "user_mode_2": "Režim 2",
+          "user_mode_3": "Režim 3",
+          "user_mode_4": "Režim 4"
+        }
       }
     },
     "number": {
@@ -158,6 +169,63 @@
       },
       "ster_temp_antifreez": {
         "name": "Zadaná teplota protizámrz pokojového termostatu {index}"
+      },
+      "ecovent_rek_user1_set_point": {
+        "name": "Režim 1 – požadovaná teplota"
+      },
+      "ecovent_presal_user1_sup_flow": {
+        "name": "Režim 1 – průtok přívodu"
+      },
+      "ecovent_presal_user1_exh_flow": {
+        "name": "Režim 1 – průtok odtahu"
+      },
+      "ecovent_rek_user2_set_point": {
+        "name": "Režim 2 – požadovaná teplota"
+      },
+      "ecovent_presal_user2_sup_flow": {
+        "name": "Režim 2 – průtok přívodu"
+      },
+      "ecovent_presal_user2_exh_flow": {
+        "name": "Režim 2 – průtok odtahu"
+      },
+      "ecovent_rek_user3_set_point": {
+        "name": "Režim 3 – požadovaná teplota"
+      },
+      "ecovent_presal_user3_sup_flow": {
+        "name": "Režim 3 – průtok přívodu"
+      },
+      "ecovent_presal_user3_exh_flow": {
+        "name": "Režim 3 – průtok odtahu"
+      },
+      "ecovent_rek_user4_set_point": {
+        "name": "Režim 4 – požadovaná teplota"
+      },
+      "ecovent_presal_user4_sup_flow": {
+        "name": "Režim 4 – průtok přívodu"
+      },
+      "ecovent_presal_user4_exh_flow": {
+        "name": "Režim 4 – průtok odtahu"
+      },
+      "ecovent_rek_party_set_point": {
+        "name": "Párty – požadovaná teplota"
+      },
+      "ecovent_presal_party_sup_flow": {
+        "name": "Párty – průtok přívodu"
+      },
+      "ecovent_presal_party_exh_flow": {
+        "name": "Párty – průtok odtahu"
+      },
+      "ecovent_rek_party_dur": {
+        "name": "Párty – doba trvání"
+      },
+      "ecovent_presal_airing_exh_flow": {
+        "name": "Větrání – průtok odtahu"
+      },
+      "ecovent_rek_airing_dur": {
+        "name": "Větrání – doba trvání"
+      },
+      "ecovent_rek_out_dur": {
+        "name": "Odchod – doba trvání"
       }
     },
     "binary_sensor": {

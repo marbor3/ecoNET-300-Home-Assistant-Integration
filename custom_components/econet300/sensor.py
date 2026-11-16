@@ -92,6 +92,7 @@ from .const import (
     STATE_CLASS_MAP,
     UNIT_NAME_TO_HA_UNIT,
 )
+from .ecovent import ECOVENT_WRITABLE_KEYS
 from .entity import (
     EconetEntity,
     EcoSterEntity,
@@ -992,7 +993,7 @@ def _controller_sensor_key_candidates(controller_id: str | None) -> set[str]:
     if is_ecomax360i_controller(controller_id):
         return ECOMAX360I_SENSORS.copy()
     if is_ecovent_controller(controller_id):
-        return ECOVENT_SENSORS.copy()
+        return ECOVENT_SENSORS - ECOVENT_WRITABLE_KEYS
     return SENSOR_MAP_KEY["_default"].copy()
 
 
@@ -1040,6 +1041,10 @@ def create_controller_sensors(
         sensor_keys |= set(data_sysParams.keys())
     # Never expose sensitive credentials/network identifiers as sensor states.
     sensor_keys -= SENSITIVE_PARAM_KEYS
+    # ecoVENT settings that have a number/select entity are not duplicated as
+    # read-only sensors.
+    if is_ecovent_controller(controller_id):
+        sensor_keys -= ECOVENT_WRITABLE_KEYS
     sensor_keys -= _raw_payload_sensor_keys(sensor_keys, data_regParams, data_sysParams)
 
     # Keys with a dedicated binary_sensor entity should not also be exposed as

@@ -25,6 +25,7 @@ from .common_functions import (
     is_ecomax360i_controller,
     is_ecosol_controller,
     is_ecoster_connected,
+    is_ecovent_controller,
 )
 from .const import (
     CONF_DEVICE_GROUPING,
@@ -83,6 +84,9 @@ def skip_edit_params(sys_params: dict[str, Any] | None) -> bool:
     if sys_params is None:
         return True
     if is_ecomax360i_controller(sys_params.get("controllerID")):
+        return False
+    # ecoVENT keeps its user settings (mode presets, airflows) in editParams.
+    if is_ecovent_controller(sys_params.get("controllerID")):
         return False
     return not is_ecoster_connected(sys_params)
 
@@ -409,15 +413,23 @@ class EconetDataCoordinator(DataUpdateCoordinator):
                 information_params = last_data.get("informationParams") or {}
 
                 is_ecomax360i = is_ecomax360i_controller(sys_params.get("controllerID"))
+                # ecoMAX360i and ecoVENT depend on editParams for their controls, so
+                # they get the full timeout and keep retrying; for other controllers
+                # editParams only feeds optional ecoSTER setpoints.
+                needs_edit_params = is_ecomax360i or is_ecovent_controller(
+                    sys_params.get("controllerID")
+                )
                 if skip_edit_params(sys_params):
                     edit_params_full = {}
                     edit_params_data = {}
                     information_params = {}
-                elif self._edit_params_fetch_due(edit_params_full, now, is_ecomax360i):
+                elif self._edit_params_fetch_due(
+                    edit_params_full, now, needs_edit_params
+                ):
                     # Other controllers only need editParams for ecoSTER setpoints,
                     # so a module without the endpoint must not stall the update.
                     timeout_sec = (
-                        None if is_ecomax360i else EDIT_PARAMS_SHORT_TIMEOUT_SEC
+                        None if needs_edit_params else EDIT_PARAMS_SHORT_TIMEOUT_SEC
                     )
                     try:
                         raw = await self._api.fetch_edit_params(timeout_sec=timeout_sec)
@@ -443,7 +455,7 @@ class EconetDataCoordinator(DataUpdateCoordinator):
                     self._edit_params_last_attempt = now
                     self._edit_params_confirm_at = 0.0
                     self._edit_params_force_refresh = False
-                    if not edit_params_full and not is_ecomax360i:
+                    if not edit_params_full and not needs_edit_params:
                         self._log_edit_params_retry()
 
                 # Only ecoMAX360i gets generic editParams entities; on other

@@ -25,6 +25,7 @@ from custom_components.econet300.const import (
     SERVICE_API,
     SERVICE_COORDINATOR,
 )
+from custom_components.econet300.ecovent import ECOVENT_WRITABLE_KEYS
 from custom_components.econet300.sensor import (
     _controller_sensor_key_candidates,
     create_controller_sensors,
@@ -78,8 +79,11 @@ class TestEcoventDetection:
         assert not is_ecovent_controller(cid)
 
     def test_ecovent_uses_ecovent_sensor_set(self) -> None:
-        """The ecoVENT key set replaces the boiler defaults."""
-        assert _controller_sensor_key_candidates("ecoVENT") == ECOVENT_SENSORS
+        """The ecoVENT key set replaces the boiler defaults, minus writable settings."""
+        assert (
+            _controller_sensor_key_candidates("ecoVENT")
+            == ECOVENT_SENSORS - ECOVENT_WRITABLE_KEYS
+        )
         assert SENSOR_MAP_KEY["ecoVENT"] is ECOVENT_SENSORS
 
 
@@ -111,10 +115,16 @@ class TestEcoventSensors:
         assert sensors_by_key[key].native_unit_of_measurement == PERCENTAGE
 
     def test_mode_presets_are_diagnostic(self, sensors_by_key: dict) -> None:
-        """Per-mode presets stay off the main device page."""
-        desc = sensors_by_key["REKUser1SetPoint"]
+        """Read-only per-mode presets stay off the main device page."""
+        desc = sensors_by_key["REKUser1SupFanSpeed"]
         assert desc.entity_category == EntityCategory.DIAGNOSTIC
-        assert desc.native_unit_of_measurement == UnitOfTemperature.CELSIUS
+        assert desc.native_unit_of_measurement == PERCENTAGE
+
+    def test_writable_settings_are_not_duplicated_as_sensors(
+        self, sensors_by_key: dict
+    ) -> None:
+        """Settings with a number/select entity get no read-only sensor copy."""
+        assert not ECOVENT_WRITABLE_KEYS & set(sensors_by_key)
 
     def test_status_codes_have_no_statistics(self, sensors_by_key: dict) -> None:
         """Raw state codes are diagnostic and do not create long-term statistics."""
