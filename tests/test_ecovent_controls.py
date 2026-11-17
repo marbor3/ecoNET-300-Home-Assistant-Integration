@@ -131,6 +131,19 @@ class TestEcoventNumbers:
         desc = _numbers(coordinator, api)["PRESALPartySupFlow"].entity_description
         assert desc.native_max_value == 500.0
 
+    def test_blank_limits_during_party_use_known_ranges(
+        self, coordinator: Mock, api: Mock
+    ) -> None:
+        """While party runs a real unit reports minv=maxv=0 for party presets."""
+        for pid in ("261", "937", "938", "934"):
+            coordinator.data["editParams"][pid].update(minv=0, maxv=0)
+        numbers = _numbers(coordinator, api)
+        temp = numbers["REKPartySetPoint"].entity_description
+        flow = numbers["PRESALPartySupFlow"].entity_description
+        assert (temp.native_min_value, temp.native_max_value) == (15.0, 30.0)
+        assert (flow.native_min_value, flow.native_max_value) == (0.0, 500.0)
+        assert "PRESALAiringExhFlow" in numbers
+
     def test_durations(self, coordinator: Mock, api: Mock) -> None:
         """Party/away last hours, airing minutes."""
         numbers = _numbers(coordinator, api)

@@ -113,6 +113,15 @@ _KIND_ATTRS: dict[str, tuple[NumberDeviceClass, str]] = {
     "minutes": (NumberDeviceClass.DURATION, UnitOfTime.MINUTES),
 }
 
+# Ranges an ecoVENT reports for these settings when no temporary mode runs;
+# flows are further capped at the unit's maximum airflow (ENRECmaxFlow).
+_FALLBACK_LIMITS: dict[str, tuple[float, float]] = {
+    "temp": (15.0, 30.0),
+    "flow": (0.0, 4000.0),
+    "hours": (0.0, 10.0),
+    "minutes": (0.0, 20.0),
+}
+
 
 def ecovent_translation_key(param: str) -> str:
     """Return the translation key of an ecoVENT setting entity."""
@@ -140,16 +149,21 @@ def ecovent_value(data: dict[str, Any] | None, name: str) -> Any:
 def _limits(
     data: dict[str, Any] | None, setting: EcoventSetting
 ) -> tuple[float, float] | None:
-    """Return the controller's ``(min, max)`` for a setting, or None when unusable."""
+    """Return ``(min, max)`` for a setting, or None when it cannot be edited.
+
+    While a temporary mode runs, the controller reports ``minv == maxv == 0``
+    for the party and airing presets; the ranges it reports otherwise are used
+    then, so the entities do not disappear after a restart during party mode.
+    """
     found = find_edit_param(data, setting.param)
     if found is None:
         return None
     entry = found[1]
     minv, maxv = entry.get("minv"), entry.get("maxv")
-    if not entry.get("edit") or not all(
-        isinstance(v, (int, float)) for v in (minv, maxv)
-    ):
+    if not entry.get("edit"):
         return None
+    if not all(isinstance(v, (int, float)) for v in (minv, maxv)) or maxv <= minv:
+        minv, maxv = _FALLBACK_LIMITS[setting.kind]
     if setting.kind == "flow":
         max_flow = ecovent_value(data, ECOVENT_MAX_FLOW_PARAM)
         if isinstance(max_flow, (int, float)) and max_flow > minv:
