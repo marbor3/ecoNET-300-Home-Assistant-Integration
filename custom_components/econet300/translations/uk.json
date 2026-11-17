@@ -143,6 +143,15 @@
           "user_mode_3": "Режим 3",
           "user_mode_4": "Режим 4"
         }
+      },
+      "ecovent_temporary_mode": {
+        "name": "Тимчасовий режим",
+        "state": {
+          "off": "Вимкнено",
+          "airing": "Провітрювання",
+          "party": "Вечірка",
+          "away": "Відсутність"
+        }
       }
     },
     "number": {

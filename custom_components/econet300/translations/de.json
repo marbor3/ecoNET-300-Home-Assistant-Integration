@@ -236,6 +236,15 @@
           "user_mode_3": "Modus 3",
           "user_mode_4": "Modus 4"
         }
+      },
+      "ecovent_temporary_mode": {
+        "name": "Temporärer Modus",
+        "state": {
+          "off": "Aus",
+          "airing": "Stoßlüften",
+          "party": "Party",
+          "away": "Außer Haus"
+        }
       }
     },
     "event": {

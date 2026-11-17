@@ -22,6 +22,7 @@ import pytest
 from custom_components.econet300.common import skip_edit_params
 from custom_components.econet300.ecovent import (
     ECOVENT_MODE_OPTIONS,
+    ECOVENT_TEMP_MODE_OPTIONS,
     ECOVENT_NUMBER_SETTINGS,
     create_ecovent_numbers,
     create_ecovent_selects,
@@ -59,6 +60,12 @@ def api() -> Mock:
     mock.uid = "TEST-ECOVENT-UID"
     mock.set_param = AsyncMock(return_value=True)
     return mock
+
+
+def _selects(coordinator: Mock, api: Mock) -> dict:
+    return {
+        e.entity_description.key: e for e in create_ecovent_selects(coordinator, api)
+    }
 
 
 def _numbers(coordinator: Mock, api: Mock) -> dict:
@@ -176,8 +183,8 @@ class TestEcoventModeSelect:
 
     @pytest.fixture
     def select(self, coordinator: Mock, api: Mock):
-        """Return the mode select with state writes stubbed."""
-        [entity] = create_ecovent_selects(coordinator, api)
+        """Return the main mode select with state writes stubbed."""
+        entity = _selects(coordinator, api)["REKWS1"]
         entity.async_write_ha_state = Mock()
         return entity
 
@@ -210,7 +217,39 @@ class TestEcoventModeSelect:
         """An unexpected REKWS1 value does not produce a select with a wrong label."""
         coordinator.data["regParams"]["REKWS1"] = 9
         coordinator.data["editParams"]["17"]["value"] = 9
-        assert create_ecovent_selects(coordinator, api) == []
+        assert "REKWS1" not in _selects(coordinator, api)
+
+
+class TestEcoventTemporaryModeSelect:
+    """Temporary mode (REKWS4): off, airing, party, away."""
+
+    def test_off_when_no_temporary_mode(self, coordinator: Mock, api: Mock) -> None:
+        """REKWS4=0 (recorded fixture) shows "off"."""
+        select = _selects(coordinator, api)["REKWS4"]
+        select.async_write_ha_state = Mock()
+        select._sync_state(select._lookup_value())  # noqa: SLF001
+        assert select.current_option == "off"
+        assert select.options == list(ECOVENT_TEMP_MODE_OPTIONS.values())
+
+    def test_party_value_observed_on_real_unit(
+        self, coordinator: Mock, api: Mock
+    ) -> None:
+        """Starting party on the panel of a real unit set REKWS4=2."""
+        coordinator.data["regParams"]["REKWS4"] = 2
+        select = _selects(coordinator, api)["REKWS4"]
+        select.async_write_ha_state = Mock()
+        select._sync_state(select._lookup_value())  # noqa: SLF001
+        assert select.current_option == "party"
+
+    @pytest.mark.asyncio
+    async def test_turning_off_writes_zero(self, coordinator: Mock, api: Mock) -> None:
+        """Choosing "off" ends the temporary mode with REKWS4=0."""
+        coordinator.data["regParams"]["REKWS4"] = 2
+        select = _selects(coordinator, api)["REKWS4"]
+        select.async_write_ha_state = Mock()
+        await select.async_select_option("off")
+        api.set_param.assert_awaited_once_with("REKWS4", 0)
+        coordinator.store_edit_param_write.assert_called_once_with("20", 0)
 
 
 class TestEcoventControlNames:
@@ -227,3 +266,5 @@ class TestEcoventControlNames:
             assert not missing, f"{path.name} lacks number names {missing}"
             states = entity["select"]["ecovent_main_mode"]["state"]
             assert set(states) == set(ECOVENT_MODE_OPTIONS.values()), path.name
+            states = entity["select"]["ecovent_temporary_mode"]["state"]
+            assert set(states) == set(ECOVENT_TEMP_MODE_OPTIONS.values()), path.name

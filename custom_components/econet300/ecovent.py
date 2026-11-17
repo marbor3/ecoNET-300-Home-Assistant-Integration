@@ -54,6 +54,23 @@ ECOVENT_MODE_OPTIONS: dict[int, str] = {
     7: "user_mode_4",
 }
 
+# Temporary mode (REKWS4), listed by the controller as off, airing, party, away.
+# Party = 2 was confirmed on a real unit (it also starts the party countdown,
+# REKtimeToEndParty); airing and away follow the controller's option order.
+ECOVENT_TEMP_MODE_PARAM = "REKWS4"
+ECOVENT_TEMP_MODE_OPTIONS: dict[int, str] = {
+    0: "off",
+    1: "airing",
+    2: "party",
+    4: "away",
+}
+
+# Enum settings exposed as selects: parameter -> (translation key, options)
+ECOVENT_SELECTS: dict[str, tuple[str, dict[int, str]]] = {
+    ECOVENT_MODE_PARAM: ("ecovent_main_mode", ECOVENT_MODE_OPTIONS),
+    ECOVENT_TEMP_MODE_PARAM: ("ecovent_temporary_mode", ECOVENT_TEMP_MODE_OPTIONS),
+}
+
 # Maximum airflow of the unit; caps presets whose own limit is larger (party and
 # airing allow 4000 m3/h in editParams although the unit moves at most ENRECmaxFlow).
 ECOVENT_MAX_FLOW_PARAM = "ENRECmaxFlow"
@@ -83,7 +100,7 @@ ECOVENT_NUMBER_SETTINGS: tuple[EcoventSetting, ...] = (
 # regParams keys that are now writable entities; the read-only all-sensors
 # sweep must not create a second, read-only copy of them.
 ECOVENT_WRITABLE_KEYS: frozenset[str] = frozenset(
-    {s.param for s in ECOVENT_NUMBER_SETTINGS} | {ECOVENT_MODE_PARAM}
+    {s.param for s in ECOVENT_NUMBER_SETTINGS} | set(ECOVENT_SELECTS)
 )
 
 _KIND_ATTRS: dict[str, tuple[NumberDeviceClass, str]] = {
@@ -203,7 +220,7 @@ class EcoventNumber(EconetEntity, NumberEntity):
 
 
 class EcoventModeSelect(EconetEntity, SelectEntity):
-    """Main operating mode of an ecoVENT unit (stop, schedule, user modes 1-4)."""
+    """ecoVENT mode setting: main mode (REKWS1) or temporary mode (REKWS4)."""
 
     entity_description: SelectEntityDescription
 
@@ -213,28 +230,29 @@ class EcoventModeSelect(EconetEntity, SelectEntity):
         api: Econet300Api,
         description: SelectEntityDescription,
     ) -> None:
-        """Initialize the mode select."""
+        """Initialize the mode select; ``description.key`` is the parameter."""
         self.entity_description = description
+        self._options_map = ECOVENT_SELECTS[description.key][1]
         super().__init__(coordinator, api)
 
     def _lookup_value(self) -> Any:
-        return ecovent_value(self.coordinator.data, ECOVENT_MODE_PARAM)
+        return ecovent_value(self.coordinator.data, self.entity_description.key)
 
     @property
     def available(self) -> bool:
         """Return True when data is fresh and the mode is a known option."""
-        return super().available and self._lookup_value() in ECOVENT_MODE_OPTIONS
+        return super().available and self._lookup_value() in self._options_map
 
     def _sync_state(self, value: Any) -> None:
-        self._attr_current_option = ECOVENT_MODE_OPTIONS.get(value)
+        self._attr_current_option = self._options_map.get(value)
         self.async_write_ha_state()
 
     async def async_select_option(self, option: str) -> None:
-        """Switch the unit to another main mode."""
-        value = next((v for v, o in ECOVENT_MODE_OPTIONS.items() if o == option), None)
+        """Switch the unit to another mode."""
+        value = next((v for v, o in self._options_map.items() if o == option), None)
         if value is None:
             raise HomeAssistantError(f"Unknown ecoVENT mode: {option}")
-        await _write(self, ECOVENT_MODE_PARAM, value)
+        await _write(self, self.entity_description.key, value)
         self._attr_current_option = option
         self.async_write_ha_state()
 
@@ -271,16 +289,22 @@ def create_ecovent_numbers(
 def create_ecovent_selects(
     coordinator: EconetDataCoordinator, api: Econet300Api
 ) -> list[EcoventModeSelect]:
-    """Create the main mode select for an ecoVENT controller."""
+    """Create the main and temporary mode selects for an ecoVENT controller."""
     data = coordinator.data or {}
     if not is_ecovent_controller((data.get("sysParams") or {}).get("controllerID")):
         return []
-    if ecovent_value(data, ECOVENT_MODE_PARAM) not in ECOVENT_MODE_OPTIONS:
-        _LOGGER.info("ecoVENT main mode not reported, mode select not created")
-        return []
-    description = SelectEntityDescription(
-        key=ECOVENT_MODE_PARAM,
-        translation_key="ecovent_main_mode",
-        options=list(ECOVENT_MODE_OPTIONS.values()),
-    )
-    return [EcoventModeSelect(coordinator, api, description)]
+    entities: list[EcoventModeSelect] = []
+    for param, (translation_key, options) in ECOVENT_SELECTS.items():
+        if ecovent_value(data, param) not in options:
+            # Unknown value: better no select than one showing a wrong mode.
+            _LOGGER.info(
+                "ecoVENT %s not reported or unknown, select not created", param
+            )
+            continue
+        description = SelectEntityDescription(
+            key=param,
+            translation_key=translation_key,
+            options=list(options.values()),
+        )
+        entities.append(EcoventModeSelect(coordinator, api, description))
+    return entities

@@ -143,6 +143,15 @@
           "user_mode_3": "Mode 3",
           "user_mode_4": "Mode 4"
         }
+      },
+      "ecovent_temporary_mode": {
+        "name": "Mode temporaire",
+        "state": {
+          "off": "Arrêt",
+          "airing": "Aération",
+          "party": "Fête",
+          "away": "Absence"
+        }
       }
     },
     "number": {

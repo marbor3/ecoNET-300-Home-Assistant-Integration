@@ -152,6 +152,15 @@
           "user_mode_3": "Režim 3",
           "user_mode_4": "Režim 4"
         }
+      },
+      "ecovent_temporary_mode": {
+        "name": "Dočasný režim",
+        "state": {
+          "off": "Vypnuto",
+          "airing": "Větrání",
+          "party": "Párty",
+          "away": "Odchod"
+        }
       }
     },
     "number": {

@@ -236,6 +236,15 @@
           "user_mode_3": "Tryb 3",
           "user_mode_4": "Tryb 4"
         }
+      },
+      "ecovent_temporary_mode": {
+        "name": "Tryb tymczasowy",
+        "state": {
+          "off": "Wyłączony",
+          "airing": "Wietrzenie",
+          "party": "Party",
+          "away": "Wyjście"
+        }
       }
     },
     "event": {
